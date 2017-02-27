@@ -1,0 +1,17 @@
+{
+  "name": "language-templatesyntax",
+  "version": "0.0.0",
+  "description": "BB Template language support in Atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeremyHeleine/language-mylanguage.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeremyHeleine/language-mylanguage/issues"
+  },
+  "license": "MIT"
+}
