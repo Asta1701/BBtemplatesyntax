@@ -1,0 +1,77 @@
+'scopeName': 'source.templatesyntax'
+'name': 'TemplateSyntax'
+'fileTypes': [
+  'template'
+]
+'patterns': [
+		{
+			'match': '^#.*$'
+			'name': 'comment.line;'
+		},
+    		{
+    			'match': '(^descriptor|Type|Helper|AuthToken|V4SortMetric|SortMetric|AuthType|Example|HelperMetric|Mandatory|Type|SaveAsCookie|DeleteOnly|EditOnly|PostingOnly|PostPosting|Textarea|Repopulate|Example|HelpText|Value|Text|Sort|Validation|CharCount|Editable|Stage|AjaxID|AjaxMax|AllowedValues|force_parse|posting_only|editable|postingonly)'
+    			'captures':
+    				'1':
+            'name':'keyword'
+    		},
+{
+  'match': '^(name|domain|force_parse|contact_email|contact_telephone|domain_acl|module|content_escape|content_html|host|url|method|body|descriptor|helper|success|failure|delmethod|delurl|delete|deletesuccess|deletefail|deleteconfirm|content_type|rebroadcast_after|username|password|port|preurl|premethod|prebody|pregrab|authurl|authbody|cookie|from|to|cc|bcc|reply-to|subject|attachment|attachment_filename|header|free_to_post|authmethod|multiple|loginmethod|logingrab|loginbody|logincontenttype|logincookie|set_header|salary_char_limit|delemail|delfromemail|basic_auth_user|basic_auth_pass|multiple|footer|special_regex|file|del_header|index_notes|directory|delformmethod|passive|jobtitle_char_limit|feed_notes|del_auth_user|del_auth_pass|remove_header|posting_only|mandatory_postcode|job_id|callback_job_id|job_url|json_job_url|callback_job_url|static_url|callback_static_url|protocol|del_content_type|html_support|content_charset|html_support|expiry_datetime|timeout|ftps|based_on|mandatory|proxy|error|hybrid_only|refreshmethod|refreshurl|refresh|refreshsuccess|refreshfail|refresh_auth_user|refresh_auth_pass|refresh_header|refresh_content_type|refreshcycle|refresh_after|refresh_content_type|refresh_from|refresh_to|refresh_cc|refresh_bcc|refresh_subject|refresh_file|refresh_host|refresh_port|refresh_passive|refresh_username|refresh_password|refresh_directory|editurl|edit|editsuccess|editfailure|edit_header|editable|edit_only|edit_after|editattachment|editmethod|editattachment_filename|editsubject|editmethod|batch|info|salary_banding|employer_only|french_hidden|content_transfer_encoding|mailprocess_id|mailprocess_file|url_extra|summary_char_limit|client_details_char_limit|description_char_limit|profile_char_limit|belgium_offer_char_limit|html_summary_char_limit|html_client_details_char_limit|html_description_char_limit|html_profile_char_limit|html_belgium_offer_char_limit|combined_description_fields|https_cert_file|https_key_file|https_ca_file)'
+  'captures':
+    '1':
+        'name':'keyword'
+},
+{
+  'match': '[\\(\\|)]([^\\|]+)(?=[\\|\\)])'
+  'captures':
+    "1": "string"
+},
+
+{
+    'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+    'name': 'constant.numeric.perl'
+},
+{
+    'match': '\\b(sub)\\s+(\\w+)\\s*\\(.*\\)'
+    'captures':
+        '1':
+            'name': 'keyword.control.perl'
+        '2':
+            'name': 'entity.name.function.perl'
+    'name': 'meta.function.perl'
+},
+{
+  'match': '\\s*(sub)\\s+(\\w+)'
+  'captures':
+    '1':
+      'name':'storage.type.sub.perl'
+    '2':
+      'name':'entity.name.function.perl'
+},
+{
+  'match':'(Name)=([^,]+),'
+  'captures':
+    '2':
+        'name':'storage.type.string.perl'
+    '1':
+        'name':'keyword'
+},
+{
+  'match':',(Helper)=([^,]+)\\('
+  'captures':
+    '2':
+        'name':'entity.name.function.perl'
+    '1':
+        'name':'keyword'
+},
+{
+  'match':',(Type)=(Stage3_Text|LocationList|List(?=\\()|MultiList(?=\\()|Step3LifeList|M?LinkedList|ListFromMappings|MultiListFromMappings|ListFromFile|MultiListFromFile|Hidden|ListFromFile)'
+  'captures':
+    '1':
+        'name':'keyword'
+    '2':
+        'name':'entity.name.function.perl'
+},
+
+
+
+]
